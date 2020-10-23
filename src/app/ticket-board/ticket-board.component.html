@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <app-ticket-group class="col-4" title="New" [tickets]="newTickets"></app-ticket-group>
+    <app-ticket-group class="col-4" title="In Progress" [tickets]="inProgressTickets"></app-ticket-group>
+    <app-ticket-group class="col-4" title="Done" [tickets]="doneTickets"></app-ticket-group>
+  </div>
+</div>
+
+<app-ticket-details></app-ticket-details>
+
+<div class="container mt-4">
+  <h3>New Ticket</h3>
+  <app-ticket-form></app-ticket-form>
+</div>

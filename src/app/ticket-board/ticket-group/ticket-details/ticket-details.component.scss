@@ -1,0 +1,16 @@
+.close:focus {
+  outline: 0;
+}
+
+.comments {
+  width: 100%;
+  .comment-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+  }
+}
+
+.actions {
+  width: 100%;
+}

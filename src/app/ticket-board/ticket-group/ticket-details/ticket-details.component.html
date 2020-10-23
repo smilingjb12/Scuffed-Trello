@@ -1,0 +1,44 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Ticket</h4>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" formControlName="title">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea type="text" class="form-control" formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select class="form-control" formControlName="categoryId">
+          <option *ngFor="let c of categories" [value]="c.id">{{c.text}}</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div class="d-flex justify-content-between actions">
+      <button type="button" class="btn btn-success" [disabled]="newCommentForm.invalid" (click)="addComment()">Add
+        new</button>
+      <div class="text-muted">Comments</div>
+    </div>
+
+    <ul class="list-unstyled comments">
+      <li class="new-comment" [formGroup]="newCommentForm">
+        <textarea class="form-control" formControlName="text"></textarea>
+      </li>
+      <div class="mt-2"></div>
+      <li class="comment-item" *ngFor="let comment of ticketComments$ | async">
+        <div class="text-muted">{{comment.user}}</div>
+        <div>{{comment.text}}</div>
+      </li>
+    </ul>
+  </div>
+</ng-template>

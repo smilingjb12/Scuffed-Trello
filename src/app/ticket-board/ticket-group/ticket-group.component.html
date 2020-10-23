@@ -1,0 +1,5 @@
+<div class="column">
+  <div class="header">{{title}}</div>
+  <app-ticket class="ticket" [ticket]="ticket" *ngFor="let ticket of tickets | async"></app-ticket>
+  <div *ngIf="!(tickets | async)?.length" class="text-muted">Nothing here yet</div>
+</div>

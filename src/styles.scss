@@ -1,0 +1,8 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/variables";
+
+.ng-invalid {
+  border-color: theme-color('danger');
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
